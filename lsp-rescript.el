@@ -111,7 +111,9 @@ representation of LSP request JSON data."
   :notification-handlers (ht ("client/registerCapability" #'ignore)
                              ("rescript/compilationFinished" #'ignore))
   :request-handlers (ht("window/showMessageRequest"
-                        #'lsp-rescript--handle-show-message-request))
+                        #'lsp-rescript--handle-show-message-request)
+                       ("workspace/inlayHint/refresh"
+                        #'ignore) )
   :priority 1
   :language-id "rescript"
   :server-id 'rescript-vscode))
